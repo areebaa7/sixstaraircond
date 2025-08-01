@@ -148,14 +148,19 @@
 </script>
 </head>
 <body>
-<!-- WhatsApp Float Button --> 
+<!-- WhatsApp Float Button with Conversion Tracking -->
 <a href="https://wa.me/60183959092?text=Hi%2C%20I'm%20interested%20in%20your%20SixStar%20Air%20Cond%20services" 
    class="whatsapp-float" 
    target="_blank" 
-   aria-label="Chat on WhatsApp about air conditioning services">
+   aria-label="Chat on WhatsApp about air conditioning services"
+   onclick="gtag('event', 'conversion', {
+     'send_to': 'AW-17129534456/HmmfCL3C1vQaEPjn_-c_',
+     'value': 5.0,
+     'currency': 'MYR',
+     'transaction_id': 'whatsapp_float_' + Date.now()
+   });">
   <i class="fab fa-whatsapp"></i>
 </a>
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: #003366;">
   <div class="container d-flex align-items-center justify-content-between">
@@ -243,32 +248,50 @@
 </section>
 <!-- WhatsApp Message Script -->
 <script>
-  // Focus the name field when Book Appointment is clicked
-  document.getElementById('bookAppointmentBtn').addEventListener('click', function(e) {
-    setTimeout(function() {
-      document.getElementById('name').focus();
-    }, 300); // Delay to allow scroll
-  });
+    document.getElementById('bookAppointmentBtn').addEventListener('click', function(e) {
+      setTimeout(function() {
+        document.getElementById('name').focus();
+      }, 300);
+    });
 
-  document.getElementById('whatsappForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    // Collect form data
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+      // Collect form data
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
 
-    // Build WhatsApp message
-    const whatsappNumber = "60183959092"; // Your WhatsApp number
-    const fullMessage = `Hello, I'm interested in your aircon services.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+      // Track conversion
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17129534456/HmmfCL3C1vQaEPjn_-c_',
+        'value': 5.0,
+        'currency': 'MYR'
+      });
 
-    // Open WhatsApp chat
-    const url = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
-    window.open(url, '_blank');
-  });
-</script>
-<!-- About Section -->
+      // Build WhatsApp message
+      const whatsappNumber = "60183959092";
+      const fullMessage = `Hello, I'm interested in your aircon services.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+
+      // Open WhatsApp
+      const url = `https://wa.me/${whatsappNumber}?text=${fullMessage}`;
+      window.open(url, '_blank');
+    });
+  </script>
+  <!-- ===== END OF WHATSAPP FORM SCRIPT ===== -->
+  <script>
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.addEventListener('click', function() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17129534456/HmmfCL3C1vQaEPjn_-c_',
+          'value': 5.0,
+          'currency': 'MYR'
+        });
+      });
+    });
+  </script>
+  <!-- About Section -->
 <section id="about" class="py-5 bg-light animated-section mt-5">
   <div class="container">
     <div class="row align-items-center">
@@ -691,26 +714,38 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
-<!-- WhatsApp Conversion Event Tracking -->
+<!-- ===== START OF CONVERSION TRACKING ===== -->
 <script>
-  const sendConversion = () => {
+  // WhatsApp Form
+  document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Your existing form handling code...
+    
     gtag('event', 'conversion', {
-      'send_to': 'AW-17129534456/APWOCNj38tcaEPjn_-c_'
+      'send_to': 'AW-17129534456/HmmfCL3C1vQaEPjn_-c_',
+      'value': 5.0,
+      'currency': 'MYR'
     });
-  };
 
-  // All WhatsApp Links
-  document.querySelectorAll('a[href*="wa.me"]').forEach(function(button) {
-    button.addEventListener('click', sendConversion);
+    // Your existing WhatsApp redirect code...
+    window.open(url, '_blank');
   });
 
-  // Also fire conversion on form submit to WhatsApp
-  const form = document.getElementById('whatsappForm');
-  if (form) {
-    form.addEventListener('submit', function () {
-      sendConversion();
+  // Phone Calls
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', function() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17129534456/HmmfCL3C1vQaEPjn_-c_',
+        'value': 5.0,
+        'currency': 'MYR'
+      });
     });
-  }
+  });
 </script>
+<!-- ===== END OF CONVERSION TRACKING ===== -->
+
+<!-- Keep your existing Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
