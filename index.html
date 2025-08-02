@@ -365,18 +365,16 @@
 <section id="services" class="py-5 bg-white">
   <div class="container">
     <h2 class="text-center fw-bold mb-5 text-primary">Our Services</h2>
-    
-    <div class="row g-4">
+
+    <div class="row g-4 justify-content-center">
 
       <!-- Service 1: AC Installation -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow service-card">
-          <div class="ratio ratio-4x3">
-            <picture>
-              <source srcset="asset/acinstall.webp" type="image/webp">
-              <img src="asset/acinstall.webp" class="card-img-top object-fit-cover" alt="Wall-mounted and cassette AC installation" loading="lazy">
-            </picture>
-          </div>
+      <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow service-card p-2">
+          <picture>
+            <source srcset="asset/acinstall.webp" type="image/webp">
+            <img src="asset/acinstall.webp" class="card-img-top service-img" alt="Wall-mounted and cassette AC installation" loading="lazy">
+          </picture>
           <div class="card-body text-center">
             <h5 class="fw-bold">AC Installation</h5>
             <p class="text-muted small">Professional wall-mounted & cassette AC installations with durable fittings.</p>
@@ -385,14 +383,12 @@
       </div>
 
       <!-- Service 2: Gas Topup -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow service-card">
-          <div class="ratio ratio-4x3">
-            <picture>
-              <source srcset="asset/gastopup.webp" type="image/webp">
-              <img src="asset/gastopup.webp" class="card-img-top object-fit-cover" alt="Air conditioner gas refill and top-up" loading="lazy">
-            </picture>
-          </div>
+      <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow service-card p-2">
+          <picture>
+            <source srcset="asset/gastopup.webp" type="image/webp">
+            <img src="asset/gastopup.webp" class="card-img-top service-img" alt="Air conditioner gas refill and top-up" loading="lazy">
+          </picture>
           <div class="card-body text-center">
             <h5 class="fw-bold">Gas Topup</h5>
             <p class="text-muted small">Expert gas top-up services to keep your air conditioners running cool.</p>
@@ -401,14 +397,12 @@
       </div>
 
       <!-- Service 3: Chemical Wash -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow service-card">
-          <div class="ratio ratio-4x3">
-            <picture>
-              <source srcset="asset/chemicalwash.webp" type="image/webp">
-              <img src="asset/chemicalwash.webp" class="card-img-top object-fit-cover" alt="AC chemical wash cleaning for efficiency" loading="lazy">
-            </picture>
-          </div>
+      <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow service-card p-2">
+          <picture>
+            <source srcset="asset/chemicalwash.webp" type="image/webp">
+            <img src="asset/chemicalwash.webp" class="card-img-top service-img" alt="AC chemical wash cleaning for efficiency" loading="lazy">
+          </picture>
           <div class="card-body text-center">
             <h5 class="fw-bold">Chemical Wash</h5>
             <p class="text-muted small">Deep cleaning for improved efficiency & cleaner indoor air quality.</p>
@@ -417,14 +411,12 @@
       </div>
 
       <!-- Service 4: Maintenance & Repair -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow service-card">
-          <div class="ratio ratio-4x3">
-            <picture>
-              <source srcset="asset/maintenance.webp" type="image/webp">
-              <img src="asset/maintenance.webp" class="card-img-top object-fit-cover" alt="Air conditioner maintenance and repair service" loading="lazy">
-            </picture>
-          </div>
+      <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow service-card p-2">
+          <picture>
+            <source srcset="asset/maintenance.webp" type="image/webp">
+            <img src="asset/maintenance.webp" class="card-img-top service-img" alt="Air conditioner maintenance and repair service" loading="lazy">
+          </picture>
           <div class="card-body text-center">
             <h5 class="fw-bold">Maintenance & Repair</h5>
             <p class="text-muted small">Quick diagnosis and professional repairs for all AC units and systems.</p>
@@ -435,22 +427,27 @@
     </div>
   </div>
 </section>
-<!-- Optional Animation Styling -->
+
+<!-- Services Section Styling -->
 <style>
   .service-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+    padding-bottom: 1rem;
+    min-height: 350px; /* Slightly taller card */
   }
   .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
   }
-  .object-fit-cover {
-    object-fit: cover;
+  .service-img {
+    height: 260px;
     width: 100%;
-    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
   }
 </style>
-
 <!-- Our Pricing Section -->
 <section id="pricing" class="py-5 bg-light">
   <div class="container">
